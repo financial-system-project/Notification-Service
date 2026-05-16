@@ -5,6 +5,17 @@ spring:
   application:
     name: notification-service
 
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/notificationdb
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
 management:
   endpoints:
     web:
